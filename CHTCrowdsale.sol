@@ -120,7 +120,7 @@ contract CharityToken is ERC20Interface, Owned, SafeMath {
         name = "Charity Token";
         decimals = 4;
         bonusEnds = now + 2 weeks;
-        endDate = now + 4 weeks;
+        endDate = now + 7 weeks;
 
     }
 
@@ -217,7 +217,7 @@ contract CharityToken is ERC20Interface, Owned, SafeMath {
         if (now <= bonusEnds) {
             tokens = msg.value * 70000;
         } else {
-            tokens = msg.value * 60000;
+            tokens = msg.value * 50000;
         }
         balances[msg.sender] = safeAdd(balances[msg.sender], tokens);
         _totalSupply = safeAdd(_totalSupply, tokens);
