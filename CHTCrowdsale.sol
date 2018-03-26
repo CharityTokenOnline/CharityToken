@@ -209,7 +209,7 @@ contract CharityToken is ERC20Interface, Owned, SafeMath {
     }
 
     // ------------------------------------------------------------------------
-    // 60,000 CHT Tokens per .25 ETH
+    // 50,000 CHT Tokens per 0.25 ETH
     // ------------------------------------------------------------------------
     function () public payable {
         require(now >= startDate && now <= endDate);
