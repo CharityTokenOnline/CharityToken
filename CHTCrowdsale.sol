@@ -3,11 +3,11 @@ pragma solidity ^0.4.18;
 // ----------------------------------------------------------------------------
 // 'CharityToken' CROWDSALE token contract
 //
-// Deployed to : 0xD0FDf2ECd4CadE671a7EE1063393eC0eB90816FD
+// Deployed to : 0x252608861b1D2Fe2F702148B63eBdc1F6d770d26
 // Symbol      : CHT
 // Name        : Charity Token
-// Total supply: 500000000
-// Decimals    : 4
+// Total supply: 0
+// Decimals    : 0
 //
 // Enjoy.
 //
@@ -118,7 +118,7 @@ contract CharityToken is ERC20Interface, Owned, SafeMath {
     function CharityToken() public {
         symbol = "CHT";
         name = "Charity Token";
-        decimals = 4;
+        decimals = 0;
         bonusEnds = now + 2 weeks;
         endDate = now + 7 weeks;
 
