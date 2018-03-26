@@ -1,13 +1,13 @@
 pragma solidity ^0.4.18;
 
 // ----------------------------------------------------------------------------
-// 'bitfwd' CROWDSALE token contract
+// 'CharityToken' CROWDSALE token contract
 //
 // Deployed to : 0xD0FDf2ECd4CadE671a7EE1063393eC0eB90816FD
-// Symbol      : FWD
-// Name        : bitfwd Token
-// Total supply: Gazillion
-// Decimals    : 18
+// Symbol      : CHT
+// Name        : Charity Token
+// Total supply: 500000000
+// Decimals    : 4
 //
 // Enjoy.
 //
@@ -99,7 +99,7 @@ contract Owned {
 // ERC20 Token, with the addition of symbol, name and decimals and assisted
 // token transfers
 // ----------------------------------------------------------------------------
-contract bitfwdToken is ERC20Interface, Owned, SafeMath {
+contract CharityToken is ERC20Interface, Owned, SafeMath {
     string public symbol;
     string public  name;
     uint8 public decimals;
@@ -115,12 +115,12 @@ contract bitfwdToken is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     // Constructor
     // ------------------------------------------------------------------------
-    function bitfwdToken() public {
-        symbol = "FWD";
-        name = "bitfwd Token";
-        decimals = 18;
-        bonusEnds = now + 1 weeks;
-        endDate = now + 7 weeks;
+    function CharityToken() public {
+        symbol = "CHT";
+        name = "Charity Token";
+        decimals = 4;
+        bonusEnds = now + 2 weeks;
+        endDate = now + 4 weeks;
 
     }
 
@@ -209,15 +209,15 @@ contract bitfwdToken is ERC20Interface, Owned, SafeMath {
     }
 
     // ------------------------------------------------------------------------
-    // 1,000 FWD Tokens per 1 ETH
+    // 60,000 CHT Tokens per .25 ETH
     // ------------------------------------------------------------------------
     function () public payable {
         require(now >= startDate && now <= endDate);
         uint tokens;
         if (now <= bonusEnds) {
-            tokens = msg.value * 1200;
+            tokens = msg.value * 70000;
         } else {
-            tokens = msg.value * 1000;
+            tokens = msg.value * 60000;
         }
         balances[msg.sender] = safeAdd(balances[msg.sender], tokens);
         _totalSupply = safeAdd(_totalSupply, tokens);
